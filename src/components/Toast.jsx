@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Alert, Snackbar } from "@mui/material";
 
 const Toast = ({ open, message, severity, onClose }) => {

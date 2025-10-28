@@ -1,4 +1,3 @@
-import React from "react";
 import { Drawer, IconButton, Button, TextField, Divider } from "@mui/material";
 import { X, Save } from "lucide-react";
 import SchemaSelector from "./SchemaSelector";
@@ -70,9 +69,8 @@ const Sidebar = ({
                 </p>
               </div>
 
-              {/* Schema Selector - No Add Button, Auto-adds on selection */}
               <div className="sidebar__section">
-                <label className="sidebar__label">Add schema to segment</label>
+                {/* <label className="sidebar__label">Add schema to segment</label> */}
                 <SchemaSelector
                   currentSelection={currentSelection}
                   setCurrentSelection={setCurrentSelection}
@@ -80,7 +78,6 @@ const Sidebar = ({
                 />
               </div>
 
-              {/* Schema List (Blue Box) */}
               <div className="sidebar__section">
                 <SchemaList
                   selectedSchemas={selectedSchemas}
