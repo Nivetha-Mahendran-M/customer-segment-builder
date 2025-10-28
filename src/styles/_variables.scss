@@ -1,0 +1,44 @@
+$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$success-gradient: linear-gradient(135deg, #1ec985 0%, #0f9b68 100%);
+$danger-gradient: linear-gradient(135deg, #ff6b8a 0%, #ec4770 100%);
+$bg-gradient: linear-gradient(180deg, #f0f4ff 0%, #e6efff 100%);
+
+// Colors - Solid
+$primary-color: #667eea;
+$secondary-color: #764ba2;
+$success-color: #1ec985;
+$error-color: #ec4770;
+$text-primary: #1a202c;
+$text-secondary: #4a5568;
+$text-muted: #718096;
+$border-color: #e2e8f0;
+$bg-light: #f7fafc;
+$white: #ffffff;
+
+// Dot Colors (Red & Green from document)
+$dot-user: #48bb78; // Green dot for user traits
+$dot-account: #e53e3e; // Red dot for account traits
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 20px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+// Transitions
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);

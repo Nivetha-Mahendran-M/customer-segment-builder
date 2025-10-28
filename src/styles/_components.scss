@@ -1,0 +1,137 @@
+@import "variables";
+@import "mixins";
+
+// Schema Selector
+.schema-selector {
+  &__select {
+    .MuiOutlinedInput-root {
+      border-radius: $radius-md !important;
+    }
+  }
+}
+
+.add-schema-btn {
+  color: $primary-color !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  margin-top: $spacing-sm !important;
+
+  &:hover {
+    background: rgba(102, 126, 234, 0.05) !important;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+// Schema Dots (Red & Green)
+.schema-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: $spacing-xs;
+
+  &--user {
+    background: $dot-user;
+    box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.2);
+  }
+
+  &--account {
+    background: $dot-account;
+    box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.2);
+  }
+}
+
+// Schema List (Blue Box)
+.schema-list {
+  background: linear-gradient(135deg, #e6f4ff 0%, #d6eeff 100%);
+  border: 2px solid #91d5ff;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
+
+  &__badge {
+    background: $primary-color;
+    color: $white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    @include flex-center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: $shadow-sm;
+  }
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0050b3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+}
+
+// Schema Item
+.schema-item {
+  background: $white;
+  border-radius: $radius-md;
+  padding: $spacing-sm;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  box-shadow: $shadow-sm;
+  transition: $transition-fast;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__select {
+    .MuiOutlinedInput-root {
+      border-radius: $radius-sm !important;
+    }
+  }
+
+  &__remove {
+    color: $error-color !important;
+
+    &:hover {
+      background: rgba(236, 71, 112, 0.1) !important;
+    }
+  }
+}
+
+// Loader
+.loader-container {
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-2xl;
+}
+
+.loader-text {
+  color: $text-secondary;
+  font-weight: 500;
+  font-size: 0.875rem;
+}

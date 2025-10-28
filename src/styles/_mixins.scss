@@ -1,0 +1,26 @@
+@mixin gradient-bg($gradient) {
+  background: $gradient;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@mixin card-hover {
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

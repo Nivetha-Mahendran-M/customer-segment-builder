@@ -1,0 +1,20 @@
+@import "variables";
+
+.table-container {
+  background: $white;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-lg;
+}
+
+.table-title {
+  font-weight: 700 !important;
+  color: $text-primary !important;
+  margin-bottom: $spacing-lg !important;
+}
+
+.segments-table {
+  .MuiDataGrid-root {
+    border: none;
+  }
+}

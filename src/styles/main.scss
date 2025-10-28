@@ -1,0 +1,246 @@
+@import "variables";
+@import "mixins";
+@import "sidebar";
+@import "components";
+@import "table";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// App Container
+.app-container {
+  min-height: 100vh;
+  background: $bg-gradient;
+  padding: $spacing-xl;
+}
+
+.main-container {
+  padding: $spacing-xl !important;
+}
+
+// Header
+.header {
+  background: $white;
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-2xl;
+  box-shadow: $shadow-lg;
+  @include flex-between;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &__icon {
+    color: $primary-color;
+    padding: $spacing-md;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: $radius-md;
+  }
+
+  &__title {
+    font-weight: 700 !important;
+    color: $text-primary !important;
+    margin: 0 !important;
+  }
+
+  &__subtitle {
+    color: $text-muted !important;
+    margin-top: 4px !important;
+  }
+}
+
+// Save Segment Button
+.save-segment-btn {
+  background: $success-gradient !important;
+  color: $white !important;
+  font-weight: 600 !important;
+  padding: $spacing-sm $spacing-xl !important;
+  border-radius: $radius-md !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  box-shadow: $shadow-md !important;
+  transition: $transition-base !important;
+
+  &:hover {
+    box-shadow: $shadow-lg !important;
+    transform: translateY(-2px);
+  }
+}
+
+// Empty State
+.empty-state {
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-2xl * 2;
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+
+  &__icon {
+    color: $text-muted;
+    opacity: 0.3;
+  }
+
+  &__title {
+    font-weight: 600 !important;
+    color: $text-secondary !important;
+  }
+
+  &__subtitle {
+    color: $text-muted !important;
+    text-align: center;
+    max-width: 400px;
+  }
+}
+
+// Animations
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .app-container {
+    padding: $spacing-md;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__left {
+      width: 100%;
+    }
+  }
+
+  .save-segment-btn {
+    width: 100%;
+  }
+
+  .table-container {
+    padding: $spacing-md;
+  }
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-light;
+  border-radius: $radius-sm;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: $radius-sm;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
+// Material-UI Overrides
+.MuiDrawer-paper {
+  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MuiAlert-root {
+  animation: slideInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MuiTextField-root {
+  .MuiOutlinedInput-root {
+    border-radius: $radius-md !important;
+
+    &:hover .MuiOutlinedInput-notchedOutline {
+      border-color: $primary-color !important;
+    }
+
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: $primary-color !important;
+      border-width: 2px !important;
+    }
+  }
+}
+
+.MuiSelect-root {
+  &:hover .MuiOutlinedInput-notchedOutline {
+    border-color: $primary-color !important;
+  }
+
+  &.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: $primary-color !important;
+    border-width: 2px !important;
+  }
+}
+
+// Print Styles
+@media print {
+  .sidebar,
+  .save-segment-btn,
+  .MuiIconButton-root {
+    display: none !important;
+  }
+
+  .app-container {
+    background: $white;
+  }
+}

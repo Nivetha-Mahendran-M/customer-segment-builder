@@ -1,0 +1,91 @@
+@import "variables";
+@import "mixins";
+
+.sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: $spacing-lg;
+    @include flex-between;
+    background: $primary-gradient;
+    color: $white;
+  }
+
+  &__close {
+    color: $white !important;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: $spacing-lg;
+  }
+
+  &__section {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-secondary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__hint {
+    margin-top: $spacing-xs;
+    font-size: 0.75rem;
+    color: $text-muted;
+    line-height: 1.4;
+  }
+
+  &__footer {
+    padding: $spacing-lg;
+    border-top: 2px solid $border-color;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__save-btn {
+    background: $success-gradient !important;
+    color: $white !important;
+    font-weight: 600 !important;
+    padding: $spacing-sm $spacing-lg !important;
+    border-radius: $radius-md !important;
+    text-transform: none !important;
+    box-shadow: $shadow-md !important;
+    transition: $transition-base !important;
+
+    &:hover {
+      box-shadow: $shadow-lg !important;
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      transform: none;
+    }
+  }
+
+  &__cancel-btn {
+    color: $text-secondary !important;
+    border-color: $border-color !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+  }
+}
