@@ -122,7 +122,8 @@ const SegmentsTable = ({ segments, onDelete }) => {
           },
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
-            padding: "12px 16px",
+            display: "flex",
+            alignItems: "center",
             "&:focus": {
               outline: "none",
             },
